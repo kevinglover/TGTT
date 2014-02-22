@@ -49,6 +49,9 @@ h1, h2, h3, h4, h5, h6 {
     background-color: rgba(0, 0, 0, 0.59);
     border: none;
 }
+.navbar-black-trans li.active.menu-podcast > a {
+    background-color: rgba(0, 0, 0, 0.3);
+}
 
 figure.author img
  {
