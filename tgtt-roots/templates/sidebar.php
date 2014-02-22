@@ -1,1 +1,3 @@
-<?php dynamic_sidebar('sidebar-primary'); ?>
+<ul>
+	<?php dynamic_sidebar('sidebar-primary'); ?>
+</ul>

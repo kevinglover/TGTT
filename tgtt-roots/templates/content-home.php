@@ -56,7 +56,9 @@
 
 			</div><!-- #feed -->
 			<aside class="col-sm-3" id="sidebar">
+				<ul>
 					<?php dynamic_sidebar( 'home-sidebar' ); ?>
+				</ul>
 			</aside>
 		</div><!-- /.content -->
   </div><!-- /.wrap -->
