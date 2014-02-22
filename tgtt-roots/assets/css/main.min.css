@@ -171,6 +171,7 @@ body.single{
     max-height: 400px;
     max-width: 300em;
     overflow: hidden;
+    margin-top: -62px;
 }
 
 .featured-image img {
