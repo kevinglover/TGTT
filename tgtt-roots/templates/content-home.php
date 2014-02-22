@@ -7,7 +7,7 @@
 			</article>
 		<?php endwhile; ?>
 
-		<div class="col-sm-9" id="feed">
+		<div class="col-sm-8" id="feed">
 			<?php 
 			$editor_pick_cat = get_category_by_slug( 'editor-pick' )->term_id;
 
@@ -55,7 +55,7 @@
 				<?php endif; ?>
 
 			</div><!-- #feed -->
-			<aside class="col-sm-3" id="sidebar">
+			<aside class="col-sm-3 col-sm-offset-1" id="sidebar">
 				<ul>
 					<?php dynamic_sidebar( 'home-sidebar' ); ?>
 				</ul>

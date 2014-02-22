@@ -80,8 +80,7 @@ figure.author img
 
 .home #feed article h2{
 	margin-top: 0;
-	font-weight: bold;
-	font-size: 1.75em;
+	font-size: 2em;
 }
 
 .home #feed article h2 a{
@@ -95,8 +94,7 @@ figure.author img
 }
 
 #sidebar{
-	background-color: #DFDFDF;
-	padding-bottom: 2em;
+    padding-bottom: 2em;
 }
 #sidebar ul, 
 #sidebar > ul > li {
@@ -136,10 +134,11 @@ nav .search-form {
 }
 
 #title {
-	font-weight: 700;
-	font-size: 4.5em;
-	color: #FFF;
-	text-shadow: -2px 1px 1px rgba(22, 20, 20, 0.6);
+    font-family: Federo,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 5.5em;
+    color: #FFF;
+    text-shadow: -2px 1px 1px rgba(22, 20, 20, 0.6);
 }
 
 .navbar-nav>li a {
@@ -183,8 +182,13 @@ body.single .content.row {
     overflow: hidden;
 }
 
-body.single .no-top-image{
-	margin-top: 30px;
+body.single .no-top-image article{
+    padding-top: 20px;
+}
+
+article h2 {
+    font-family: Federo,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 400;
 }
 
 article > header {
@@ -290,6 +294,10 @@ body.archive .published {
 .byline a,
 .byline .author{
     float: left;
+}
+
+.no-top-image .sidebar {
+	margin-top: 1.2em;
 }
 
 @media (min-width:992px){
