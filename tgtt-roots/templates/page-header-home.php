@@ -6,6 +6,7 @@
 			'posts_per_page' => 1,
 			'category__in' => array($podcast)
 			);
+
 		$the_query = new WP_Query( $args ); ?>
 
 		<?php if ( $the_query->have_posts() ) : ?>
@@ -13,7 +14,14 @@
     			<div class="content">
 					<!-- the loop -->
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-						<article id="recent-podcast">
+						<?php 
+						$post_id = $post->ID;
+						$key = "background_color";
+						$single = true;
+						$custom_bg = get_post_meta($post_id, $key, $single); 
+						?>
+
+						<article id="recent-podcast" class="<?php echo $custom_bg; ?>">
 				            <h1 id="title"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h1>
 				            <section class="lead">
 				            	<?php the_excerpt();?>
