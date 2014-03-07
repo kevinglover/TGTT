@@ -14,7 +14,7 @@
 					<!-- the loop -->
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 						<article id="recent-podcast">
-				            <h1 id="title"><?php the_title();?></h1>
+				            <h1 id="title"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h1>
 				            <p id="excerpt"><?php the_excerpt();?></p>
 
 				            <?php 

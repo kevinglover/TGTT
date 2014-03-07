@@ -1,31 +1,57 @@
-<?php if(has_post_thumbnail()):?>
-<div class="featured-image">
-  <?php the_post_thumbnail(); ?>
-</div>
-<div class="wrap container" role="document">
-<?php else:?>
-<div class="wrap container no-top-image" role="document">
-<?php endif;?>
+<article <?php post_class(); ?>>
+  <div class="entry-content">
+      <?php
+        //displays all users ($users will also contain all usermeta fields for each user
+        $blogusers = get_users_of_blog();
+        $html .= '<dl>'; 
 
-  <div class="content row">
-    <div class="main <?php echo roots_main_class(); ?>" role="main">
+        if ($blogusers) {
+          foreach ($blogusers as $bloguser) {
+            $user = get_userdata($bloguser->user_id);
+            $userID=$user->ID;
+            $post_count = get_usernumposts($userID);
+            if ($post_count) {
+              
+              $html .= '<dt>'; 
+              $html .= "<div class='row'>";
 
+              
+              $html .= "<div class='col-xs-2 col-sm-2'>";
+              $alt = get_the_author_meta('firstname',$userID) . ' '.get_the_author_meta('lastname',$userID);
+              $html .= '<a href="'.get_author_posts_url($userID).'" class="avatar-link">';
+              $html .= get_avatar( $userID, $size, $default, $alt );
+              $html .= "</a></div>";
+              $html .= "<div class='col-xs-8 col-sm-10'>";
+              $html .= '<h2><a href="'.get_author_posts_url($userID).'">' . $user->user_firstname . ' ' . $user->user_lastname . '</a></h2>';
+              $html .= "</div>";
+              $html .= "</div>";
 
-          <article <?php post_class(); ?>>
-            <div class="entry-content">
+              $html .= '</dt>';
+              $html .= '<dd>';
+              $size ='';
+              $default ='';
 
-                <h2>List of authors:</h2>
-                <ul>
-                    <?php wp_list_authors('exclude_admin=0'); ?>
-                </ul>
+              $html .= "<div class='row'>";
+              $html .= "<div class='col-xs-2 col-sm-2'>";
+              $html .= "</div>";
+              $html .= "<div class='col-xs-8 col-sm-10'>";
+              $html .= get_the_author_meta('description',$userID);
+              $html .= "</div>";
+              $html .= "</div>";
 
-            </div>
-            
-          </article>
+              $html .= '</dd>';
+            }
+          }
+        }
 
-    </div><!-- /.main -->
-  </div><!-- /.content -->
-</div><!-- /.wrap -->
+        $html .= '</dl>';
+        echo $html;
+      ?>
+
+  </div>
+  
+</article>
+
 
 
 

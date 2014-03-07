@@ -14,14 +14,15 @@
 					<!-- the loop -->
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 						<article id="recent-podcast">
-				            <h1 id="title"><?php the_title();?></h1>
-				            <p id="excerpt"><?php the_excerpt();?></p>
+				            <h1 id="title"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h1>
+				            <section class="lead">
+				            	<?php the_excerpt();?>
+				            </p>
 
 				            <?php 
-				            $podcast_url='heel';
-				            $podcast_url = get_post_meta($post->ID, 'podcast_url', true);
-
-				            if ($podcast_url != ''): ?>
+					            $podcast_url = get_post_custom_values('podcast_url')[0];
+					        ?>
+					        <?php if($podcast_url!=''):?>
 				            	<audio src="<?php echo $podcast_url;?>" preload="auto" controls></audio>
 				        	<?php endif;?>
 						</article>
@@ -30,4 +31,7 @@
 				</div>
 			</div>
 		<?php endif; ?>
+	<?php wp_reset_postdata(); ?>
+
+
 </div>
