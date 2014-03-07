@@ -97,8 +97,9 @@
 				$size ='';
 				$default ='';
 				$alt = get_the_author_meta('firstname') . ' '.get_the_author_meta('lastname');
-
+				$html .= '<a href="'.get_author_posts_url($id).'" class="avatar-link">';
 				$html .=get_avatar( $id, $size, $default, $alt );
+				$html .='</a>';
 			$html .='</figure>';
 		$html .='</article>';
 		echo $html;
