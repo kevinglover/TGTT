@@ -18,7 +18,9 @@
 				            <p id="excerpt"><?php the_excerpt();?></p>
 
 				            <?php 
-					            $podcast_url = get_post_custom_values('podcast_url')[0];
+				            	if(get_post_custom_values('podcast_url')){
+					            	$podcast_url = get_post_custom_values('podcast_url')[0];
+					        	}
 					        ?>
 					        <?php if($podcast_url!=''):?>
 				            	<audio src="<?php echo $podcast_url;?>" preload="auto" controls></audio>
