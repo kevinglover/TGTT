@@ -18,7 +18,7 @@
 				            <p id="excerpt"><?php the_excerpt();?></p>
 
 				            <?php 
-				            	$podcast_url = get_post_custom_values('podcast_url')
+				            	$podcast_url = get_post_custom_values('podcast_url');
 				            	if(sizeof($podcast_url)>1){
 					            	$podcast_url = $podcast_url[0];
 					        	}
