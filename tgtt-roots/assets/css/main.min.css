@@ -83,14 +83,14 @@ a:focus{
 }
 
 #recent-podcast:before {
-	position: absolute;
-	content: '';
-	width: 100%;
-	height: 100%;
-	background-color: #D3D3D3;
-	top: 0px;
-	left: 0px;
-	z-index: -1;
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: #D3D3D3;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
 }
 #recent-podcast p,
 #recent-podcast.blue p,
@@ -99,32 +99,32 @@ a:focus{
 #recent-podcast.grey p,
 #recent-podcast.teal p,
 #recent-podcast.brown p{
-	color:#F8F8F8;
-	text-shadow:0px 0px 5px black;
+    color:#F8F8F8;
+    text-shadow:0px 0px 5px black;
 }
 
 #recent-podcast.blue:before{
-	background-color: #174475;
+    background-color: #174475;
 }
 
 #recent-podcast.red:before{
-	background-color:#7a1c1c;
+    background-color:#7a1c1c;
 }
 
 #recent-podcast.purple:before{
-	background-color:#3b3140;
+    background-color:#3b3140;
 }
 
 #recent-podcast.grey:before{
-	background-color:#656e6d;
+    background-color:#656e6d;
 }
 
 #recent-podcast.brown:before{
-	background-color:#3e3128;
+    background-color:#3e3128;
 }
 
 #recent-podcast.teal:before{
-	background-color:#6cb1d9;
+    background-color:#6cb1d9;
 }
 
 figure.author img
@@ -280,7 +280,7 @@ body.single{
 }
 
 .featured-image img {
-    min-width: 100%;
+    max-width: 100%;
     height: auto;
 }
 
@@ -504,13 +504,13 @@ body.archive .published {
 }
 
 .avatar-link{
-	transition:opacity 0.2s;
-	margin-top: 1em;
-	margin-left: 20%;
-	height:64px;
-	position: relative;
-	float: left;
-	width: 100%;
+    transition:opacity 0.2s;
+    margin-top: 1em;
+    margin-left: 20%;
+    height:64px;
+    position: relative;
+    float: left;
+    width: 100%;
 }
 .avatar-link:hover,
 .avatar-link:focus{
@@ -518,5 +518,5 @@ body.archive .published {
 }
 
 .avatar-link img{
-	position: absolute;
+    position: absolute;
 }
