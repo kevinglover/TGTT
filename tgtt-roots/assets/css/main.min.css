@@ -82,6 +82,50 @@ a:focus{
     background-color: rgba(0, 0, 0, 0.3);
 }
 
+#recent-podcast:before {
+	position: absolute;
+	content: '';
+	width: 100%;
+	height: 100%;
+	background-color: #D3D3D3;
+	top: 0px;
+	left: 0px;
+	z-index: -1;
+}
+
+#recent-podcast.blue p,
+#recent-podcast.red p,
+#recent-podcast.purple p,
+#recent-podcast.grey p,
+#recent-podcast.teal p,
+#recent-podcast.brown p{
+	color:#F8F8F8;
+}
+
+#recent-podcast.blue:before{
+	background-color: #174475;
+}
+
+#recent-podcast.red:before{
+	background-color:#7a1c1c;
+}
+
+#recent-podcast.purple:before{
+	background-color:#3b3140;
+}
+
+#recent-podcast.grey:before{
+	background-color:#656e6d;
+}
+
+#recent-podcast.brown:before{
+	background-color:#3e3128;
+}
+
+#recent-podcast.teal:before{
+	background-color:#6cb1d9;
+}
+
 figure.author img
  {
     border-radius: 50%;
@@ -172,7 +216,8 @@ nav .search-form {
     margin-top: -62px;
     padding-top: 122px;
     padding-bottom:80px;
-    background-color: #89E49B;
+    overflow: hidden;
+    position: relative;
 }
 
 #title {
