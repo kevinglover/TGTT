@@ -2,7 +2,6 @@
 	<div class="content row">
 		<?php while (have_posts()) : the_post(); ?>
 			<article class="col-xs-12">
-				<h2>This is the content of the page</h2>
 				<?php the_content(); ?>
 			</article>
 		<?php endwhile; ?>
