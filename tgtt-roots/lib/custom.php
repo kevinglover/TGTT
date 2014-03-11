@@ -4,6 +4,21 @@
  */
 
 function tgtt_theme_customizer( $wp_customize ) {
+
+	//shortname
+    $wp_customize->add_section( 'tgtt_shortname_section' , array(
+	    'title'       => __( 'Short Site Name', 'tgtt' ),
+	    'priority'    => 25,
+	    'description' => 'Enter a short or abbreviated site name for your site title. This will appear in the placeholder text for the search component.',
+	) );
+	$wp_customize->add_setting( 'tgtt_shortname' );
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'tgtt_shortname', array(
+	    'label'    => __( 'Short Site Name', 'tgtt' ),
+	    'section'  => 'tgtt_shortname_section',
+	    'settings' => 'tgtt_shortname',
+	) ) );	
+
 	//logo
     $wp_customize->add_section( 'tgtt_logo_section' , array(
 	    'title'       => __( 'Logo', 'tgtt' ),
@@ -17,7 +32,7 @@ function tgtt_theme_customizer( $wp_customize ) {
 	    'section'  => 'tgtt_logo_section',
 	    'settings' => 'tgtt_logo',
 	) ) );
-	
+
 }
 add_action('customize_register', 'tgtt_theme_customizer');
 
