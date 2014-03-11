@@ -9,6 +9,7 @@
 		<div class="col-sm-8" id="feed">
 			<?php 
 			$editor_pick_cat = get_category_by_slug( 'editor-pick' )->term_id;
+			$podcast_cat = get_category_by_slug( 'podcast' )->term_id;
 
 		// the query
 			$args = array(
@@ -34,14 +35,14 @@
 	// the query
 			$args = array(
 				'posts_per_page' => 5,
-				'category__not_in'=> array($editor_pick_cat)
+				'category__not_in'=> array($editor_pick_cat, $podcast_cat)
 				);
 
 				$the_query = new WP_Query( $args ); ?>
 
 				<?php if ( $the_query->have_posts() ) : ?>
 					<div class="row">
-						<header class="col-xs-12"><h2>Most Recent</h2></header>
+						<header class="col-xs-12"><h2>Most Recent Blog Posts</h2></header>
 						<!-- the loop -->
 						<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 							<?php write_article();?>
