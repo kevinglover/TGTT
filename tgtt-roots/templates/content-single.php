@@ -17,16 +17,17 @@
               <?php get_template_part('templates/entry-meta'); ?>
             </header>
             <div class="entry-content">
-              <?php the_content(); ?>
-            </div>
             <?php 
               $podcast_url = get_post_custom_values('podcast_url');
               $podcast_url = $podcast_url[0];
-              ?>
-              <?php if($podcast_url!=''):?>
-                <audio src="<?php echo $podcast_url;?>" preload="auto" controls></audio>
-                <p class="download-podcast"><a href="<?php echo $podcast_url;?>">Download this episode</a></p>
-              <?php endif;?>
+            ?>
+            <?php if($podcast_url!=''):?>
+              <audio src="<?php echo $podcast_url;?>" preload="auto" controls></audio>
+              <p class="download-podcast"><a href="<?php echo $podcast_url;?>">Download this episode</a></p>
+            <?php endif;?>
+            <?php the_content(); ?>
+            </div>
+
             <footer>
               <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
             </footer>
