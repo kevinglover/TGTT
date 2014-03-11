@@ -43,6 +43,7 @@
 							?>
 							<?php if($podcast_url!=''):?>
 								<audio src="<?php echo $podcast_url;?>" preload="auto" controls></audio>
+								<p class="download-podcast"><a href="<?php echo $podcast_url;?>">Download this episode</a></p>
 							<?php endif;?>
 						</article>
 					</div>
