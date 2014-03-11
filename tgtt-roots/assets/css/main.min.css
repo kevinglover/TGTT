@@ -341,7 +341,7 @@ body.archive .published {
 }
 
 .wrap.container > .content .main {
-    border-left: 4px solid #E6E6E6;
+    border-left: 4px solid rgb(230, 230, 230);
     border-bottom: 1px solid #E7E7E7;
     min-height: 40em;
 }
@@ -362,21 +362,27 @@ p.download-podcast {
 
 .alignright, .alignleft, .alignnone{
     margin: 4px;
-    padding: 4px;
-    border: 1px solid #fff;
-    box-shadow: 0 1px 1px rgba(124,124,124,.5);
+    padding: 5px;
+    border-bottom-width: 1px;
+    border-style: solid;
+    border-color: rgb(230, 230, 230);
+    
+    background-color: rgb(253, 253, 253);
 } 
 
 .alignright {
-    float:right;   
+    float:right;
+    border-left-width: 3px;
 }
 
 .alignleft {
-    float:left;   
+    float:left; 
+    border-right-width: 3px;
 }
 
 .alignnone {
     float:none;   
+    border-left-width: 3px;
 }
 
 
