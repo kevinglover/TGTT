@@ -35,16 +35,11 @@
 							<h1 id="title"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h1>
 							<section class="lead">
 								<?php the_excerpt();?>
-							</p>
-
-							<?php 
-							$podcast_url = get_post_custom_values('podcast_url');
-							$podcast_url = $podcast_url[0];
-							?>
-							<?php if($podcast_url!=''):?>
-								<audio src="<?php echo $podcast_url;?>" preload="auto" controls></audio>
-								<p class="download-podcast"><a href="<?php echo $podcast_url;?>">Download this episode</a></p>
-							<?php endif;?>
+							</section>
+							<?php
+								$content = str_replace(strip_shortcodes(get_the_content()),"",get_the_content());               
+							    echo do_shortcode($content);
+				            ?>
 						</article>
 					</div>
 				</div>

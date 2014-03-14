@@ -360,6 +360,11 @@ p.download-podcast {
     font-size: .8em;
 }
 
+.mejs-container {
+	clear: both;
+	margin-top: 100px;
+}
+
 .alignright, .alignleft, .alignnone{
     margin: 4px;
     padding: 5px;
