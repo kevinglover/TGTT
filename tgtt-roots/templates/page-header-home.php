@@ -37,8 +37,13 @@
 								<?php the_excerpt();?>
 							</section>
 							<?php
-								$content = str_replace(strip_shortcodes(get_the_content()),"",get_the_content());               
-							    echo do_shortcode($content);
+								//$content = str_replace(strip_shortcodes(get_the_content()),"",get_the_content());
+								$pattern = get_shortcode_regex();
+								preg_match('/'.$pattern.'/s', $post->post_content, $matches);
+								if (is_array($matches) && $matches[2] == 'audio') {
+								   $shortcode = $matches[0];
+								   echo do_shortcode($shortcode);
+								}
 				            ?>
 						</article>
 					</div>
