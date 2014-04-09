@@ -1,4 +1,9 @@
 <header class="banner navbar navbar-inverse navbar-black-trans navbar-static-top" role="banner">
+<div class="topbar hidden-xs">
+    <h1 class="site-title">The Game's the Thing</h1>
+    <?php get_search_form(true); ?>
+</div>
+
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -16,7 +21,9 @@
           wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav'));
         endif;
       ?>
-      <?php get_search_form(true); ?>
+      <div class="visible-xs">
+        <?php get_search_form(true); ?>
+      </div>
     </nav>
   </div>
 </header>

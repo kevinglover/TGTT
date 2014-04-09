@@ -8,53 +8,38 @@
 
 		<div class="col-sm-8" id="feed">
 			<?php 
-			$editor_pick_cat = get_category_by_slug( 'editor-pick' )->term_id;
-			$podcast_cat = get_category_by_slug( 'podcast' )->term_id;
 
-		// the query
-			$args = array(
-				'posts_per_page' => 1,
-				'category__in'=> array($editor_pick_cat)
+				//Get categories and assign to variable
+				$podcast_cat = get_category_by_slug( 'podcast' )->term_id;
+
+				// the query
+				$args = array(
+					'posts_per_page' => 5,
+					'category__not_in'=> array($podcast_cat),
+					'offset'=>1
 				);
 
-				$the_query = new WP_Query( $args ); ?>
+				$the_query = new WP_Query( $args );
+			?>
 
 			<?php if ( $the_query->have_posts() ) : ?>
 				<div class="row">
-					<header class="col-xs-12"><h2>Editor's Pick</h2></header>
+					<header class="col-xs-12">
+						<h2>Recent Blog Posts</h2>
+					</header>
 					<!-- the loop -->
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 						<?php write_article();?>
 					<?php endwhile; ?>
 					<!-- end of the loop -->
+
+					<?php wp_reset_postdata(); ?>
+
 				</div>
 			<?php endif; ?>
-			<?php wp_reset_postdata(); ?>
 
-			<?php 
-	// the query
-			$args = array(
-				'posts_per_page' => 5,
-				'category__not_in'=> array($editor_pick_cat, $podcast_cat)
-				);
-
-				$the_query = new WP_Query( $args ); ?>
-
-				<?php if ( $the_query->have_posts() ) : ?>
-					<div class="row">
-						<header class="col-xs-12"><h2>Most Recent Blog Posts</h2></header>
-						<!-- the loop -->
-						<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-							<?php write_article();?>
-						<?php endwhile; ?>
-						<!-- end of the loop -->
-
-						<?php wp_reset_postdata(); ?>
-
-					</div>
-				<?php endif; ?>
-
-			</div><!-- #feed -->
+		</div>
+			<!-- #feed -->
 			<aside class="col-sm-3 col-sm-offset-1" id="sidebar">
 				<ul>
 					<?php dynamic_sidebar( 'home-sidebar' ); ?>
@@ -66,6 +51,9 @@
 <?php 
 	function write_article()
 	{
+		$guest_posts_cat = get_category_by_slug( 'guest-posts' )->term_id;
+		$is_guest_post = false;
+
 		$author_id = get_the_author_meta('ID');
 		$author_name = get_the_author_meta('first_name').' '.get_the_author_meta('last_name');
 
@@ -76,6 +64,9 @@
 		if($categories){
 			foreach($categories as $category) {
 				$cats .= '<a href="'.get_category_link( $category->term_id ).'" title="' . esc_attr( sprintf( __( "View all posts in %s" ), $category->name ) ) . '">'.$category->cat_name.'</a>'.$separator;
+				if($category->term_id == $guest_posts_cat){
+					$is_guest_post=true;
+				}
 			}
 		$categories= ' in '. trim($cats, $separator);
 		}
@@ -84,7 +75,12 @@
 
 		$html .= '<article>';
 			$html .= '<section class="col-xs-12 col-sm-10">';
-				$html .= '<h2><a href="'. get_permalink().'">'.get_the_title().'</a></h2>';
+				$html .= '<h2><a href="'. get_permalink().'">';
+				if($is_guest_post){
+					$html.='<span class="prefix">Guest Post: </span>';
+				}
+				$html.=get_the_title();
+				$html.='</a></h2>';
 				$html .='<p class="excerpt">'.get_the_excerpt().'</p>';
 				$html .='<p class="meta">';
 				 	$html.='<span class="author"><a href="'.get_author_posts_url($author_id).'" title="Post by '.$author_name.'">'.$author_name.'</a> </span>';
