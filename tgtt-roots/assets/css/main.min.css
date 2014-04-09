@@ -40,14 +40,14 @@ body{
 }
 
 .banner .topbar .site-title{
-	width: auto;
-	float:left;
-	padding-left: 20%;
-	margin: 10px auto;
-	text-align: center;
-	color: #FFF;
-	font-size: 2em;
-	text-shadow: none;
+    /* width: auto; */
+    /* float:left; */
+    /* padding-left: 20%; */
+    margin: 10px auto;
+    text-align: center;
+    color: #FFF;
+    font-size: 2em;
+    text-shadow: none;
 }
 
 .banner .topbar form{
