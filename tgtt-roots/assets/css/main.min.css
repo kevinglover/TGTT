@@ -96,8 +96,14 @@ a:focus{
     text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.68);
 }
 
+.site-title > a {
+    color: #FFF;
+}
+
 .recent .title > a:hover, 
-.recent .title > a:focus{
+.recent .title > a:focus,
+.site-title > a:hover,
+.site-title > a:focus {
     color: #A4CBFD;
 }
 
@@ -642,9 +648,7 @@ p.download-podcast {
         margin-left: 0px;
         z-index: 10;
 	}
-	.nav>li:first-child{
-		padding-top:3em
-	}
+
 }
 
 @media (max-width:767px){
@@ -653,7 +657,9 @@ p.download-podcast {
         border-top: 1px solid #DDD;
         padding-top:20px;
     }
-
+    .nav>li:first-child{
+        padding-top:3em
+    }
 }
 
 @media (min-width:821px) and (max-width:993px){
