@@ -660,6 +660,12 @@ p.download-podcast {
     .nav>li:first-child{
         padding-top:3em
     }
+    .banner .topbar{
+        float: none;
+    }
+    body.single .no-top-image article {
+        margin-top: 20px;
+    }
 }
 
 @media (min-width:821px) and (max-width:993px){

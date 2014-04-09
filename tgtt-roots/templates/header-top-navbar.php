@@ -1,9 +1,9 @@
 <header class="banner navbar navbar-inverse navbar-black-trans navbar-static-top" role="banner">
-<div class="container topbar hidden-xs">
-  <div class="col-sm-5 col-sm-offset-2 col-md-5 col-md-offset-4 col-lg-4 col-lg-offset-4">
+<div class="container topbar">
+  <div class="col-xs-12 col-sm-5 col-sm-offset-2 col-md-5 col-md-offset-4 col-lg-4 col-lg-offset-4">
     <h1 class="site-title"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a></h1>
   </div>
-  <div class="col-sm-4 col-sm-offset-1 col-md-3 col-md-offset-0 col-lg-3 col-lg-offset-1">
+  <div class="hidden-xs col-sm-4 col-sm-offset-1 col-md-3 col-md-offset-0 col-lg-3 col-lg-offset-1">
     <?php get_search_form(true); ?>
   </div>
 </div>
