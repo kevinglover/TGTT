@@ -4,10 +4,14 @@
     ?>
 
     <dl>
-    	<dt>Profile</dt>
-        <dd><?php echo $curauth->user_description; ?></dd>
-        <dt>Website</dt>
-        <dd><a href="<?php echo $curauth->user_url; ?>"><?php echo $curauth->user_url; ?></a></dd>
+    	<?php if ($curauth->user_description != '') : ?>
+      <dt>Profile</dt>
+      <dd><?php echo $curauth->user_description; ?></dd>
+      <?php endif; ?>
+      <?php if ($curauth->user_url != '') : ?>
+      <dt>Website</dt>
+      <dd><a href="<?php echo $curauth->user_url; ?>"><?php echo $curauth->user_url; ?></a></dd>
+      <?php endif; ?>
     </dl>
 
     <ul>
