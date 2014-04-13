@@ -29,7 +29,9 @@
     </div><!-- /.main -->
 
     <?php if (roots_display_sidebar()) : ?>
-      <aside class="sidebar <?php echo roots_sidebar_class(); ?>" role="complementary">
+      <aside class="col-sm-3 col-sm-offset-1" role="complementary" id="sidebar">
+
+      <!--<aside class="sidebar <?php //echo roots_sidebar_class(); ?>" role="complementary">-->
         <?php include roots_sidebar_path(); ?>
       </aside><!-- /.sidebar -->
     <?php endif; ?>
