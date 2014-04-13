@@ -4,6 +4,9 @@
 
 <div class="page-header">
   <h1>
-    <?php echo $curauth->nickname; ?>
+    <?php
+    	//echo $curauth->nickname;
+    	the_author();
+	?>
   </h1>
 </div> 
