@@ -11,4 +11,6 @@
   <?php wp_head(); ?>
 
   <link rel="alternate" type="application/rss+xml" title="<?php echo get_bloginfo('name'); ?> Feed" href="<?php echo home_url(); ?>/feed/">
+  <link rel='publisher' href='https://plus.google.com/112006677394037454533'>
+  <link rel='shortcut icon' sizes='196x196' href='/wp-content/uploads/2014/01/tgtt216.png'>
 </head>
