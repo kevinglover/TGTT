@@ -13,7 +13,12 @@ body{
     font-family: 'Open Sans', sans-serif;
 }
 
+
 .entry-content {
+    font-size: 16px;
+}
+
+p.excerpt,.entry-content p {
     font-size: 16px;
 }
 
@@ -381,7 +386,7 @@ nav .search-form {
 }
 
 body.single{
-    background-color: #FDFDFD;
+    /*background-color: #FDFDFD;*/
 }
 
 .featured-image {
@@ -495,7 +500,7 @@ p.download-podcast {
 /*Widget*/
 
 .widget {
-    padding: 0.5em 1em;
+    padding: 0;
     margin: 10px 0;
 }
 
