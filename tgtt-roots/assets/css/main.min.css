@@ -620,7 +620,7 @@ p.download-podcast {
 	#recent-podcast, #recent-blog {
 		padding:10px;
 		padding-top: 40px;
-		height: 300px;
+		min-height: 300px;
 	}
 
     .navbar-brand {
