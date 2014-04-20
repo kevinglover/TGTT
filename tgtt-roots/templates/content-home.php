@@ -74,7 +74,7 @@
 		$html ='';
 
 		$html .= '<article>';
-			$html .= '<section class="col-xs-12 col-sm-10">';
+			$html .= '<section class="col-xs-9 col-md-10">';
 				$html .= '<h2><a href="'. get_permalink().'">';
 				if($is_guest_post){
 					$html.='<span class="prefix">Guest Post: </span>';
@@ -87,7 +87,7 @@
 				 	$html.='<span class="categories">'.$categories.'</span>';
 				$html .='</p>';
 			$html .='</section>';
-			$html .='<figure class="col-xs-12 col-sm-2 author">';
+			$html .='<figure class="col-xs-3 col-md-2 author">';
 
 				$id = get_the_author_meta('ID');
 				$size ='';
