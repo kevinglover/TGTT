@@ -685,6 +685,11 @@ p.download-podcast {
         margin-top: 30px;
 	    padding-top: 20px;
     }
+
+    .recent .title > a {
+	    font-size: 1.4em;
+	}
+
 }
 
 @media (min-width:821px) and (max-width:993px){
